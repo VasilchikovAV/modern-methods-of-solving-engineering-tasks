@@ -1,0 +1,365 @@
+@prefix : <http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/> .
+
+<http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/запрашивает_продукт
+:запрашивает_продукт rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Кредитная_заявка ;
+                     rdfs:range :Кредитный_продукт .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/имеет_доход
+:имеет_доход rdf:type owl:ObjectProperty ;
+             rdfs:domain :Работа ;
+             rdfs:range :Категория_дохода .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/имеет_историю
+:имеет_историю rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Клиент ;
+               rdfs:range :Кредитная_история .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/имеет_работу
+:имеет_работу rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Клиент ;
+              rdfs:range :Работа .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/имеет_стаж
+:имеет_стаж rdf:type owl:ObjectProperty ;
+            rdfs:domain :Работа ;
+            rdfs:range :Категория_стажа .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/имеет_сумму
+:имеет_сумму rdf:type owl:ObjectProperty ;
+             rdfs:domain :Кредитная_заявка ;
+             rdfs:range :Категория_суммы .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/имеет_уровень_риска
+:имеет_уровень_риска rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Кредитный_продукт ;
+                     rdfs:range :Уровень_риска .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/подал_заявку
+:подал_заявку rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :Клиент ;
+              rdfs:range :Кредитная_заявка .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Категория_дохода
+:Категория_дохода rdf:type owl:Class .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Категория_стажа
+:Категория_стажа rdf:type owl:Class .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Категория_суммы
+:Категория_суммы rdf:type owl:Class .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Клиент
+:Клиент rdf:type owl:Class .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Кредитная_заявка
+:Кредитная_заявка rdf:type owl:Class .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Кредитная_история
+:Кредитная_история rdf:type owl:Class .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Кредитный_продукт
+:Кредитный_продукт rdf:type owl:Class .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Одобренная_заявка
+:Одобренная_заявка rdf:type owl:Class ;
+                   rdfs:subClassOf :Кредитная_заявка .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Отклоненная_заявка
+:Отклоненная_заявка rdf:type owl:Class ;
+                    rdfs:subClassOf :Кредитная_заявка .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Отличная_кредитная_история
+:Отличная_кредитная_история rdf:type owl:Class ;
+                            rdfs:subClassOf :Кредитная_история .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Плохая_кредитная_история
+:Плохая_кредитная_история rdf:type owl:Class ;
+                          rdfs:subClassOf :Кредитная_история .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Работа
+:Работа rdf:type owl:Class .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Уровень_риска
+:Уровень_риска rdf:type owl:Class .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Хорошая_кредитная_история
+:Хорошая_кредитная_история rdf:type owl:Class ;
+                           rdfs:subClassOf :Кредитная_история .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Автокредит
+:Автокредит rdf:type owl:NamedIndividual ,
+                     :Кредитный_продукт ;
+            :имеет_уровень_риска :Средний_риск .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Алексей_Козлов
+:Алексей_Козлов rdf:type owl:NamedIndividual ,
+                         :Клиент ;
+                :имеет_историю :История_Алексея ;
+                :имеет_работу :Работа_Алексея ;
+                :подал_заявку :Заявка_003 .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Большая_сумма
+:Большая_сумма rdf:type owl:NamedIndividual ,
+                        :Категория_суммы .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Высокий_доход
+:Высокий_доход rdf:type owl:NamedIndividual ,
+                        :Категория_дохода .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Высокий_риск
+:Высокий_риск rdf:type owl:NamedIndividual ,
+                       :Уровень_риска .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Дмитрий_Смирнов
+:Дмитрий_Смирнов rdf:type owl:NamedIndividual ,
+                          :Клиент ;
+                 :имеет_историю :История_Дмитрия ;
+                 :имеет_работу :Работа_Дмитрия ;
+                 :подал_заявку :Заявка_005 .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Заявка_001
+:Заявка_001 rdf:type owl:NamedIndividual ,
+                     :Кредитная_заявка ;
+            :запрашивает_продукт :Потребительский_кредит ;
+            :имеет_сумму :Средняя_сумма .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Заявка_002
+:Заявка_002 rdf:type owl:NamedIndividual ,
+                     :Кредитная_заявка ;
+            :запрашивает_продукт :Автокредит ;
+            :имеет_сумму :Большая_сумма .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Заявка_003
+:Заявка_003 rdf:type owl:NamedIndividual ,
+                     :Кредитная_заявка ;
+            :запрашивает_продукт :Ипотека ;
+            :имеет_сумму :Большая_сумма .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Заявка_004
+:Заявка_004 rdf:type owl:NamedIndividual ,
+                     :Кредитная_заявка ;
+            :запрашивает_продукт :Кредитная_карта ;
+            :имеет_сумму :Малая_сумма .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Заявка_005
+:Заявка_005 rdf:type owl:NamedIndividual ,
+                     :Кредитная_заявка ;
+            :запрашивает_продукт :Микрозайм ;
+            :имеет_сумму :Малая_сумма .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Иван_Петров
+:Иван_Петров rdf:type owl:NamedIndividual ,
+                      :Клиент ;
+             :имеет_историю :История_Ивана ;
+             :имеет_работу :Работа_Ивана ;
+             :подал_заявку :Заявка_001 .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Ипотека
+:Ипотека rdf:type owl:NamedIndividual ,
+                  :Кредитный_продукт ;
+         :имеет_уровень_риска :Высокий_риск .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/История_Алексея
+:История_Алексея rdf:type owl:NamedIndividual ,
+                          :Отличная_кредитная_история .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/История_Дмитрия
+:История_Дмитрия rdf:type owl:NamedIndividual ,
+                          :Плохая_кредитная_история .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/История_Ивана
+:История_Ивана rdf:type owl:NamedIndividual ,
+                        :Хорошая_кредитная_история .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/История_Марии
+:История_Марии rdf:type owl:NamedIndividual ,
+                        :Плохая_кредитная_история .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/История_Ольги
+:История_Ольги rdf:type owl:NamedIndividual ,
+                        :Хорошая_кредитная_история .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Кредитная_карта
+:Кредитная_карта rdf:type owl:NamedIndividual ,
+                          :Кредитный_продукт ;
+                 :имеет_уровень_риска :Средний_риск .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Малая_сумма
+:Малая_сумма rdf:type owl:NamedIndividual ,
+                      :Категория_суммы .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Мария_Сидорова
+:Мария_Сидорова rdf:type owl:NamedIndividual ,
+                         :Клиент ;
+                :имеет_историю :История_Марии ;
+                :имеет_работу :Работа_Марии ;
+                :подал_заявку :Заявка_002 .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Микрозайм
+:Микрозайм rdf:type owl:NamedIndividual ,
+                    :Кредитный_продукт ;
+           :имеет_уровень_риска :Средний_риск .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Низкий_доход
+:Низкий_доход rdf:type owl:NamedIndividual ,
+                       :Категория_дохода .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Низкий_риск
+:Низкий_риск rdf:type owl:NamedIndividual ,
+                      :Уровень_риска .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Ольга_Иванова
+:Ольга_Иванова rdf:type owl:NamedIndividual ,
+                        :Клиент ;
+               :имеет_историю :История_Ольги ;
+               :имеет_работу :Работа_Ольги ;
+               :подал_заявку :Заявка_004 .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Потребительский_кредит
+:Потребительский_кредит rdf:type owl:NamedIndividual ,
+                                 :Кредитный_продукт ;
+                        :имеет_уровень_риска :Низкий_риск .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Работа_Алексея
+:Работа_Алексея rdf:type owl:NamedIndividual ,
+                         :Работа ;
+                :имеет_доход :Высокий_доход ;
+                :имеет_стаж :Стаж_более_10_лет .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Работа_Дмитрия
+:Работа_Дмитрия rdf:type owl:NamedIndividual ,
+                         :Работа ;
+                :имеет_доход :Низкий_доход ;
+                :имеет_стаж :Стаж_менее_года .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Работа_Ивана
+:Работа_Ивана rdf:type owl:NamedIndividual ,
+                       :Работа ;
+              :имеет_доход :Средний_доход ;
+              :имеет_стаж :Стаж_от_1_года_до_5_лет .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Работа_Марии
+:Работа_Марии rdf:type owl:NamedIndividual ,
+                       :Работа ;
+              :имеет_доход :Низкий_доход ;
+              :имеет_стаж :Стаж_менее_года .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Работа_Ольги
+:Работа_Ольги rdf:type owl:NamedIndividual ,
+                       :Работа ;
+              :имеет_доход :Средний_доход ;
+              :имеет_стаж :Стаж_от_1_года_до_5_лет .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Средний_доход
+:Средний_доход rdf:type owl:NamedIndividual ,
+                        :Категория_дохода .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Средний_риск
+:Средний_риск rdf:type owl:NamedIndividual ,
+                       :Уровень_риска .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Средняя_сумма
+:Средняя_сумма rdf:type owl:NamedIndividual ,
+                        :Категория_суммы .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Стаж_более_10_лет
+:Стаж_более_10_лет rdf:type owl:NamedIndividual ,
+                            :Категория_стажа .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Стаж_менее_года
+:Стаж_менее_года rdf:type owl:NamedIndividual ,
+                          :Категория_стажа .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Стаж_от_1_года_до_5_лет
+:Стаж_от_1_года_до_5_лет rdf:type owl:NamedIndividual ,
+                                  :Категория_стажа .
+
+
+###  http://kik.misis.ru/ontology/mpi/2025/Vasilchikov_Alexandr/task3/Стаж_от_5_лет_до_10_лет
+:Стаж_от_5_лет_до_10_лет rdf:type owl:NamedIndividual ,
+                                  :Категория_стажа .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
